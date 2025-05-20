@@ -23,14 +23,9 @@
   <script>
     const allowedLat = 40.952181;
     const allowedLon = 29.139799;
-    const maxDistanceMeters = 100;
+    const maxDistanceMeters = 10000;
     const endpoint = "https://script.google.com/macros/s/AKfycbw_uDCV4u7nm12dPSDcPx2f2mPvvLzEhXYFE-aGsKuGQILXwPaR4jC0BUkzBnfdWiLKUg/exec";
     const meetingName = "Meeting1";
-
-    if (localStorage.getItem(`checkedIn_${meetingName}`)) {
-      document.getElementById("checkin-form").style.display = "none";
-      document.getElementById("status").innerText = "You have already checked in for this meeting.";
-    }
 
     function getDistance(lat1, lon1, lat2, lon2) {
       const R = 6371e3;
@@ -87,9 +82,8 @@
         })
       });
 
-      localStorage.setItem(`checkedIn_${meetingName}`, "true");
-      document.getElementById("checkin-form").style.display = "none";
-      document.getElementById("status").innerText = "Check-in successful. Thank you!";
+      document.getElementById("status").innerText = "Check-in successful. You can submit again if needed.";
+      document.getElementById("name").value = ""; // Clear input
     });
   </script>
 </body>
