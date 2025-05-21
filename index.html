@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meeting 1 Check-In</title>
+  <title>Meeting Check-In</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
@@ -10,10 +10,10 @@
   </style>
 </head>
 <body>
-  <h2>Meeting 1 Check-In</h2>
+  <h2>Meeting Check-In</h2>
 
   <form id="checkin-form">
-    <label>Enter your name:</label><br>
+    <label>Adınız ve Soyadınızı Girin:</label><br>
     <input type="text" id="name" required><br>
     <button type="submit">Check In</button>
   </form>
@@ -25,7 +25,7 @@
     const allowedLon = 29.139799;
     const maxDistanceMeters = 100;
     const endpoint = "https://script.google.com/macros/s/AKfycbw_uDCV4u7nm12dPSDcPx2f2mPvvLzEhXYFE-aGsKuGQILXwPaR4jC0BUkzBnfdWiLKUg/exec";
-    const meetingName = "Meeting1";
+    const meetingName = "Meeting";
 
     function getDistance(lat1, lon1, lat2, lon2) {
       const R = 6371e3;
@@ -82,7 +82,7 @@
         })
       });
 
-      document.getElementById("status").innerText = "Check-in successful. You can submit again if needed.";
+      document.getElementById("status").innerText = "Check-in successful.";
       document.getElementById("name").value = ""; // Clear input
     });
   </script>
